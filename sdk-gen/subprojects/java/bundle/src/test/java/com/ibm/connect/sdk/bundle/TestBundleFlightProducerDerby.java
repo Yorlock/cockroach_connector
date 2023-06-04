@@ -1,3 +1,4 @@
+
 /* *************************************************** */
 /*                                                     */
 /* (C) Copyright IBM Corp. 2022                        */
@@ -18,8 +19,8 @@ import com.ibm.wdp.connect.common.sdk.api.models.ConnectionProperties;
 /**
  * Tests the Apache Derby connector in a bundle of multiple connectors.
  */
-public class TestBundleFlightProducerDerby extends DerbyTestSuite
-{
+
+public class TestBundleFlightProducerDerby extends DerbyTestSuite {
     private static final String DATASOURCE_TYPE_NAME = DerbyDatasourceType.DATASOURCE_TYPE_NAME;
 
     private static BundleTestEnvironment testEnvironment;
@@ -30,8 +31,7 @@ public class TestBundleFlightProducerDerby extends DerbyTestSuite
      * @throws Exception
      */
     @BeforeClass
-    public static void setUpOnce() throws Exception
-    {
+    public static void setUpOnce() throws Exception {
         testEnvironment = BundleTestEnvironment.getInstance();
     }
 
@@ -39,32 +39,27 @@ public class TestBundleFlightProducerDerby extends DerbyTestSuite
      * Cleanup after tests.
      */
     @AfterClass
-    public static void tearDownOnce()
-    {
+    public static void tearDownOnce() {
         testEnvironment.release();
     }
 
     @Override
-    protected FlightClient getClient()
-    {
+    protected FlightClient getClient() {
         return testEnvironment.getClient();
     }
 
     @Override
-    protected String getDatasourceTypeName()
-    {
+    protected String getDatasourceTypeName() {
         return DATASOURCE_TYPE_NAME;
     }
 
     @Override
-    protected ConnectionProperties createConnectionProperties()
-    {
+    protected ConnectionProperties createConnectionProperties() {
         return testEnvironment.createDerbyConnectionProperties();
     }
 
     @Override
-    protected Connection getConnection()
-    {
+    protected Connection getConnection() {
         return testEnvironment.getConnection();
     }
 }

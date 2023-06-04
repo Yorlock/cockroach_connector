@@ -17,7 +17,6 @@ public class ClientTokenAuthHandler implements ClientAuthHandler
 {
     private final byte[] authToken;
     private byte[] callToken = new byte[0];
-
     /**
      * Constructs an authentication handler for a Flight client.
      *
