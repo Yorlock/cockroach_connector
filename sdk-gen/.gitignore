@@ -6,5 +6,7 @@ bin/
 build/
 subprojects/*
 !subprojects/java/
+!subprojects/cockroach_flight_name/
+!subprojects/cockroach_name/
 testdb/
 *.log
